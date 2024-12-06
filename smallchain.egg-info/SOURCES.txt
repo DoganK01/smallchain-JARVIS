@@ -1,0 +1,14 @@
+setup.py
+smallchain.egg-info/PKG-INFO
+smallchain.egg-info/SOURCES.txt
+smallchain.egg-info/dependency_links.txt
+smallchain.egg-info/top_level.txt
+src/__init__.py
+src/cosine_sim.py
+src/database.py
+src/document.py
+src/pdf_file_utils.py
+src/prompt.py
+src/runnables.py
+src/settings.py
+src/text_splitter.py

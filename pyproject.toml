@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "smallchain"
+version = "0.1.0"
+description = "This is a small implementation of langchain, including a JARVIS-like project"
+authors = ["Dogan <dogankeskin33@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+torch = "^2.5.1"
+openai = "^1.57.0"
+pydantic = "^2.10.3"
+pypdf2 = "^3.0.1"
+pymupdf = "^1.25.0"
+pdfplumber = "^0.11.4"
+pydantic-settings = "^2.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
