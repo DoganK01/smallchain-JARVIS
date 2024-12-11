@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     AZURE_OPENAI_ENDPOINT: str
     GMAIL_HOST_USER: str
     TIMEZONE: str
-    WEATHERSTACK_API_KEY: str
+    WEATHER_API_KEY: str
     WORLDS_NEWS_API_KEY: str
 
     model_config = SettingsConfigDict(env_file=".env")

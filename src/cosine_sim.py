@@ -44,6 +44,7 @@ def cosine_similarity(vector1, vector2):
 
 if __name__ == "__main__":
     vec1 = torch.tensor([1.0, 2.0, 3.0])
+    print(vec1)
     vec2 = torch.tensor([4.0, 5.0, 6.0])
     try:
         cosine_sim = cosine_similarity(vec1, vec2)

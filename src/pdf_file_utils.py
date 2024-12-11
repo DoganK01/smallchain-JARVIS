@@ -23,29 +23,41 @@ from src.document import Document
 
 
 class PDFDocumentLoader:
-    def load(self, file_path: str) -> list[Document]:
+
+    def __init__(self, file_path: str):
+        """
+        Setting self.file_path to file_path variable.
+
+        :param file_path: The path to the PDF file.
+        :return: Nothing.
+        """
+        self.file_path = file_path
+
+
+    def load(self) -> list[Document]:
         """
         Load a PDF file and create a Document object from its content, metadata, images, tables, and annotations.
 
-        :param file_path: The path to the PDF file.
         :return: A Document object containing the text, metadata, images, tables, and annotations.
         """
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"The file '{file_path}' does not exist.")
+        if not os.path.exists(self.file_path ):
+            raise FileNotFoundError(f"The file '{self.file_path }' does not exist.")
         
-        page_content = self.extract_text(file_path)
-        
-        metadata = self.extract_metadata(file_path)
+        metadata = {}
 
-        images = self.extract_images(file_path)
+        page_content = self.extract_text(self.file_path )
+        
+        metadata = self.extract_metadata(self.file_path )
+
+        images = self.extract_images(self.file_path )
         metadata["images"] = images if images else []
 
-        tables = self.extract_tables(file_path)
+        tables = self.extract_tables(self.file_path )
         metadata["tables"] = tables if tables else []
 
-        annotations = self.extract_annotations(file_path)
+        annotations = self.extract_annotations(self.file_path )
         metadata["annotations"] = annotations if annotations else []
-
+        print(type(metadata))
         return [Document(
             page_content=page_content,
             metadata=metadata
@@ -145,13 +157,14 @@ class PDFDocumentLoader:
     
 
 
+if __name__ == "__main__":
+    loader = PDFDocumentLoader(file_path=r"C:\Users\Nazlı\Desktop\smallchain\Soru Bankası.pdf"
+                            )
+    document = loader.load()
 
-loader = PDFDocumentLoader()
-document = loader.load(r"C:\Users\Nazlı\Desktop\smallchain\Soru Bankası.pdf")
 
+    # Access the content and metadata from the loaded document
+    #print(document[0].page_content)
+    print(type(document[0].metadata))
 
-# Access the content and metadata from the loaded document
-#print(document.page_content)
-print(document.metadata.keys)
-
-#print(document)
+    #print(document)

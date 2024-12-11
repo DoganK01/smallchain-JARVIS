@@ -4,7 +4,7 @@ from string import Formatter
 
 class BasePromptTemplate(Runnable):
 
-    def __init__(self, template, next=None):
+    def __init__(self, template=None, next=None):
         super().__init__(next=next)
         self.template = template
 
@@ -16,6 +16,7 @@ class BasePromptTemplate(Runnable):
         return self.template.format(**kwargs)
     
     def process(self, data):
+        print("FROM PROMPT CLASS:      ", self.format_prompt(**data))
         return self.format_prompt(**data)
     
     def get_template_variables(self, ):
@@ -36,15 +37,15 @@ class ChatPromptTemplate(BasePromptTemplate):
     
 
 
+if __name__ == "__main__":
+    # Define a template string for ChatPromptTemplate
+    chat_template_str = "Chat with {username}: {message}"
 
-# Define a template string for ChatPromptTemplate
-chat_template_str = "Chat with {username}: {message}"
-
-# Create an instance of ChatPromptTemplate using from_template
-chat_template = ChatPromptTemplate.from_template(chat_template_str)
-print(chat_template.template)
-# Now, you can process some data through the template
-chat_data = {"username": "Alice", "message": "Hello there!"}
-chat_result = chat_template.process(chat_data)
+    # Create an instance of ChatPromptTemplate using from_template
+    chat_template = ChatPromptTemplate.from_template(chat_template_str)
+    print(chat_template.template)
+    # Now, you can process some data through the template
+    chat_data = {"username": "Alice", "message": "Hello there!"}
+    chat_result = chat_template.process(chat_data)
 
     

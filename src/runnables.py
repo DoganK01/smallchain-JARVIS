@@ -5,15 +5,15 @@ class Runnable(ABC):
         self.next = next
 
     @abstractmethod
-    def process(self, data):
+    def process(self, data, **kwargs):
         """
         This method must be implemented by subclasses to define
         data processing behavior.
         """
         pass
 
-    def invoke(self, data):
-        processed_data = self.process(data)
+    def invoke(self, data, *args, **kwargs):
+        processed_data = self.process(data, *args, **kwargs)
         if self.next is not None:
             return self.next.invoke(processed_data)
         return processed_data
@@ -30,9 +30,9 @@ class RunnableSequence(Runnable):
     def process(self, data):
         return data
 
-    def invoke(self, data):
-        first_result = self.first.invoke(data)
-        return self.second.invoke(first_result)
+    def invoke(self, data=None, *args, **kwargs):
+        first_result = self.first.invoke(data, *args, **kwargs)
+        return self.second.invoke(first_result, *args, **kwargs)
     
 
 class DictTransformer(Runnable):
@@ -44,8 +44,10 @@ class DictTransformer(Runnable):
         result = {}
         for key, runnable in self.mapping.items():
             result[key] = runnable.invoke(data)
+        print("FROM DİCTTRANSFORER: ", result)
         return result
 
 class RunnablePassthrough(Runnable):
     def process(self, data):
+        print("FROM RUNNABLEPASSTHROUGH: ", data)
         return data

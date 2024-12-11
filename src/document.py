@@ -22,7 +22,7 @@ class Document(BaseModel):
         arbitrary_types_allowed = True
     
     # ensures that the validation works
-    def __init__(self, page_content: str, **kwargs: Any) -> None:
+    def __init__(self, page_content, **kwargs: Any) -> None:
         super().__init__(page_content=page_content, **kwargs)
 
 
@@ -35,7 +35,7 @@ class Document(BaseModel):
     
 
 
-docs = Document(page_content="Hi", metadata={"author": "John"})
+docs = Document(page_content="Hi")
 
-print(docs.embeddings)
-print(type(docs.embeddings))
+
+print(docs.metadata)
