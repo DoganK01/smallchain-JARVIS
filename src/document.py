@@ -34,8 +34,3 @@ class Document(BaseModel):
         return self.model_dump(exclude_none=exclude_none)
     
 
-
-docs = Document(page_content="Hi")
-
-
-print(docs.metadata)

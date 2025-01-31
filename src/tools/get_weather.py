@@ -7,10 +7,10 @@ from src.settings import settings
 
 class WeatherTool(AsyncBaseTool):
     """
-    A tool to fetch detailed weather data using OpenWeatherMap API asynchronously.
+    Fetch detailed weather data using OpenWeatherMap API asynchronously
     """
     model_config = ConfigDict(json_schema_extra={"name": "get_weather_data"})
-    location: str = Field(description="Location to get weather data for", examples=" ")
+    location: str = Field(description="Location to get weather data for", examples="New York")
 
     async def _arun(self):
         """
@@ -55,7 +55,20 @@ class WeatherTool(AsyncBaseTool):
                         "timezone_offset": weather_data["timezone"]
                     }
                     print(details)
-                    return details
+
+                    result = (
+                        f"Weather in {details['location']}:\n"
+                        f"- Condition: {details['weather_main']} ({details['weather_description']})\n"
+                        f"- Temperature: {details['temperature']['current']}°C "
+                        f"(Feels like: {details['temperature']['feels_like']}°C)\n"
+                        f"  Min: {details['temperature']['min']}°C, Max: {details['temperature']['max']}°C\n"
+                        f"- Humidity: {details['humidity']}%\n"
+                        f"- Pressure: {details['pressure']} hPa\n"
+                        f"- Wind: {details['wind']['speed']} m/s, "
+                        f"Direction: {details['wind']['direction_deg'] or 'N/A'}°\n"
+                        f"- Cloudiness: {details['clouds']}%\n"
+                    )
+                    return result
 
             except aiohttp.ClientResponseError as e:
                 # Handle HTTP-related errors, e.g., 404, 500

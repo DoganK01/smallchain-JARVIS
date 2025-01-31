@@ -6,7 +6,7 @@ from src.runnables import Runnable
 from src.settings import settings
 from src.text_splitter import CRecursiveTextSplitter
 from src.document import Document
-from src. cosine_sim import cosine_similarity
+from src.cosine_sim import cosine_similarity
 import torch
 
 VDB = TypeVar("VDB", bound="VectorDatabase")
@@ -91,15 +91,12 @@ class VectorDatabase(Runnable):
 
 
         for doc in self.texts:
-            print("Question = ", question_embedding)
-            print("Embedding: ", doc.embeddings)
             similarity = cosine_similarity(question_embedding, doc.embeddings)
             similarities.append((doc, similarity))
 
         similarities.sort(key=lambda x: x[1], reverse=True)
 
         final_context = "\n\n".join(doc[0].page_content for doc in similarities)
-        print("FROM DATABASE:   ", final_context)
         return "\n\n".join(doc[0].page_content for doc in similarities)
 
 

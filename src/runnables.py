@@ -44,10 +44,8 @@ class DictTransformer(Runnable):
         result = {}
         for key, runnable in self.mapping.items():
             result[key] = runnable.invoke(data)
-        print("FROM DİCTTRANSFORER: ", result)
         return result
 
 class RunnablePassthrough(Runnable):
     def process(self, data):
-        print("FROM RUNNABLEPASSTHROUGH: ", data)
         return data

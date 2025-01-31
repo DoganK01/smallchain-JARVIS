@@ -40,7 +40,7 @@ class PDFDocumentLoader:
 
         :return: A Document object containing the text, metadata, images, tables, and annotations.
         """
-        if not os.path.exists(self.file_path ):
+        if not os.path.exists(self.file_path):
             raise FileNotFoundError(f"The file '{self.file_path }' does not exist.")
         
         metadata = {}
@@ -57,7 +57,6 @@ class PDFDocumentLoader:
 
         annotations = self.extract_annotations(self.file_path )
         metadata["annotations"] = annotations if annotations else []
-        print(type(metadata))
         return [Document(
             page_content=page_content,
             metadata=metadata

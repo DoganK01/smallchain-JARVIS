@@ -12,12 +12,12 @@ class BasePromptTemplate(Runnable):
     def from_template(template):
         return BasePromptTemplate(template)
     
-    def format_prompt(self, **kwargs):
+    def _format_prompt(self, **kwargs):
         return self.template.format(**kwargs)
     
     def process(self, data):
-        print("FROM PROMPT CLASS:      ", self.format_prompt(**data))
-        return self.format_prompt(**data)
+        #print("FROM PROMPT CLASS:      ", self._format_prompt(**data))
+        return self._format_prompt(**data)
     
     def get_template_variables(self, ):
         return sorted({
@@ -33,8 +33,8 @@ class ChatPromptTemplate(BasePromptTemplate):
     @staticmethod
     def from_template(template):
         return ChatPromptTemplate(template)
-    
-    
+
+
 
 
 if __name__ == "__main__":

@@ -2,11 +2,12 @@ from src.pdf_file_utils import PDFDocumentLoader
 from src.database import VectorDatabase
 from src.prompt import ChatPromptTemplate
 from src.runnables import DictTransformer, RunnablePassthrough
-
+from src.settings import settings
+from src.llm import AzureChatOpenAI
 import asyncio
 
 async def main():
-    file_path = r"C:\Users\Nazlı\Desktop\smallchain\deneme.pdf"
+    file_path = r"C:\Users\Nazlı\Desktop\smallchain\deneme_pdf.pdf"
     loader = PDFDocumentLoader(file_path)
     
     docs = loader.load() 
@@ -22,7 +23,9 @@ async def main():
     """
     prompt = ChatPromptTemplate.from_template(template)
 
-    retrieval_chain = DictTransformer({"context": retriever, "question": RunnablePassthrough()}) | prompt
+    llm = AzureChatOpenAI()
+
+    retrieval_chain = DictTransformer({"context": retriever, "question": RunnablePassthrough()}) | prompt | llm
     
 
     result = retrieval_chain.invoke("where did harrison work?")
