@@ -102,12 +102,10 @@ async def main():
         stream_response = await azure_openai_client.chat.completions.create(model="gpt-4o-attention-project",
                                             messages=messages,
                                             stream=True)
-        print("STREAM RESPONSEEEEEEEEE 1: ", stream_response)
         logger.info("Azure OpenAI Service generation time: {s:.3f} seconds", s=perf_counter() - _now)
         print(colored("Assistant > ", "green"), end="", flush=True)
         
         extracted_response, metadata, tool_calls = await ahandle_stream(stream_response)
-        print("Tool Callllss: ", tool_calls)
 
         messages.append({"role": "assistant", "content": extracted_response})
 
@@ -122,7 +120,6 @@ async def main():
                 tool_output: Any = await google_cred_tools.get(tool_name)(**tool_inputs).arun()
             else:
                 tool_output: Any = await other_tools.get(tool_name)(**tool_inputs).arun()
-            print("TOOL OUTPUT: ",tool_output)
             logger.info("Tool output: {o}", o=tool_output)
             messages.append({"role": "user", "content": user_prompt+"\n\n"+str(tool_output)})
             chat_history["content"].append({"messages": messages.copy(), **metadata.model_dump()})
@@ -134,7 +131,6 @@ async def main():
             stream_response = await azure_openai_client.chat.completions.create(model="gpt-4o-attention-project",
                                                 messages=messages,
                                                 stream=True)
-            print("STREAM RESPONSEEEEEEEEE 2: ", stream_response)
             logger.info("Azure OpenAI Service generation time: {s:.3f} seconds", s=perf_counter() - _now)
             print(colored("Assistant > ", "green"), end="", flush=True)
             
