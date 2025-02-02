@@ -6,16 +6,49 @@ authors = ["Dogan <dogankeskin33@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-torch = "^2.5.1"
-openai = "^1.57.0"
-pydantic = "^2.10.3"
-pypdf2 = "^3.0.1"
-pymupdf = "^1.25.0"
-pdfplumber = "^0.11.4"
-pydantic-settings = "^2.6.1"
+python = "^3.9"
 
+# Core dependencies
+openai = "*"
+torch = "*"
+loguru = "*"
+rich = "*"
+termcolor = "*"
+pydantic = "^2.0"
+pydantic-settings = "^2.0"
+aiohttp = "*"
+requests = "*"
+geocoder = "*"
+
+# Google API dependencies
+google-auth = "*"
+google-auth-oauthlib = "*"
+google-auth-httplib2 = "*"
+google-api-python-client = "*"
+
+# PDF processing
+PyPDF2 = "*"
+pymupdf = "*"
+pdfplumber = "*"
+
+# Audio processing
+pyaudio = "*"
+pygame = "*"
+
+# UI Framework
+PyQt6 = "*"
+PyQt6-WebEngine = "*"
+
+# Additional utilities
+typing-extensions = "*"
+enum34 = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+flake8 = "*"
+mypy = "*"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
