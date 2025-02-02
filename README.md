@@ -4,8 +4,11 @@
 ![image](https://github.com/user-attachments/assets/e508c596-1405-4046-881a-9d3424743752)
 
 
-## Video
+## Project Demo
 
+Click on the image to watch the video on YouTube
+
+[![Watch the video](https://img.youtube.com/vi/U6dkOt4xzGk/0.jpg)](https://www.youtube.com/watch?v=U6dkOt4xzGk)
 
 
 ## JARVIS
