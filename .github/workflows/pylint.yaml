@@ -1,0 +1,33 @@
+master:
+  load-plugins: pylint_plugins
+  jobs: 4
+  ignore:
+    - .venv
+    - venv
+    - dist
+    - build
+  extension-pkg-whitelist: pyproject.toml
+
+messages_control:
+  disable:
+    - too-few-public-methods
+    - missing-module-docstring
+    - missing-class-docstring
+    - missing-function-docstring
+    - fixme
+    - line-too-long
+    - import-error
+    - too-many-arguments
+    - too-many-locals
+    - duplicate-code
+
+format:
+  max-line-length: 88
+  single-line-if-stmt: no
+
+basic:
+  good-names: ["_"]
+  bad-names: ["foo", "bar", "baz"]
+
+typecheck:
+  ignored-modules: ["google.protobuf"]

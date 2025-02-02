@@ -1,0 +1,7 @@
+.env
+google_credentials.json
+history/
+src/__pycache__/
+src/tools/__pycache__/
+src/tools/google_tools/__pycache__/
+token.json
