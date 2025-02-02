@@ -64,7 +64,11 @@ class GoogleMapsTool(AsyncBaseTool):
         pyqt_tool = PyQt6UI(google_tool)
         pyqt_tool.show()
         app.exec()
+<<<<<<< HEAD
         return "Roadmap display completed successfully"
+=======
+        return
+>>>>>>> 8408410155300391741746111fec68794621c62e
 
 
 
@@ -82,6 +86,13 @@ class PyQt6UI:
         # Set up the layout
         self.layout = QVBoxLayout()
 
+<<<<<<< HEAD
+=======
+        # Input field for destination
+        self.destination_input = QLineEdit(self.window)
+        self.destination_input.setPlaceholderText("Enter your destination")
+        self.layout.addWidget(self.destination_input)
+>>>>>>> 8408410155300391741746111fec68794621c62e
 
         # Button to get the route
         self.get_route_button = QPushButton("Get Route", self.window)

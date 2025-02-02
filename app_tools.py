@@ -121,7 +121,11 @@ async def main():
             else:
                 tool_output: Any = await other_tools.get(tool_name)(**tool_inputs).arun()
             logger.info("Tool output: {o}", o=tool_output)
+<<<<<<< HEAD
             messages.append({"role": "user", "content": user_prompt+"\n\n"+"Context: "+"\n\n"+str(tool_output)})
+=======
+            messages.append({"role": "user", "content": user_prompt+"\n\n"+str(tool_output)})
+>>>>>>> 8408410155300391741746111fec68794621c62e
             chat_history["content"].append({"messages": messages.copy(), **metadata.model_dump()})
             save_json_chat_history(conversation_id=conversation_id, chat_history=chat_history)
 
