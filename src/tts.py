@@ -13,11 +13,7 @@ class TextToSpeech:
     A class to asynchronously stream OpenAI Text-to-Speech output in real-time using PyAudio.
     """
 
-<<<<<<< HEAD
     def __init__(self, client: AsyncAzureOpenAI, model: str = "tts-1", voice: str = "nova", rate: int = 15500):
-=======
-    def __init__(self, client: AsyncAzureOpenAI, model: str = "tts-1", voice: str = "nova", rate: int = 15000):
->>>>>>> 8408410155300391741746111fec68794621c62e
         """
         Initialize the AsyncRealTimeTTSPlayer.
 
