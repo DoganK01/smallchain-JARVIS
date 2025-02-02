@@ -1,5 +1,4 @@
 
-https://github.com/user-attachments/assets/38decc6c-fa59-45f7-a42c-50d6f52b2e77
 # smallchain - JARVIS
 
 ![image](https://github.com/user-attachments/assets/e508c596-1405-4046-881a-9d3424743752)
