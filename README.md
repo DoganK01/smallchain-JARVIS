@@ -68,3 +68,6 @@ poetry install
 ```bash
 poetry run python app_tools.py
 ```
+## TO-DO:
+
+- [ ] Combine RAG from smallchain and custom tools to enhance JARVIS capability
