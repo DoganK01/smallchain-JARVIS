@@ -27,6 +27,21 @@ This project isn't just about technology; it's about transforming how you intera
 ## smallchain
 Introducing a lightweight library inspired by Langchain, designed to bring the power of Retrieval Augmented Generation (RAG) to your applications. This simple yet effective framework integrates external knowledge sources into your AI’s response generation, making it smarter and more contextually aware. It’s ideal for building chatbots, virtual assistants, or other NLP applications, offering easy integration and scalability. With this tool, you can enhance your AI models with real-time data retrieval, enabling them to generate more relevant and accurate outputs. It’s a practical, efficient solution for developers looking to implement RAG without the complexity.
 
+## Repository Structure
+
+| Source            | Content                                                      |
+| ----------------- |:------------------------------------------------------------:|
+| src/astream.py    | Handles the output of the stream                             |
+| src/database.py   | Custom database                                              |
+| src/document.py   | Langchain-like document class                                |
+| src/llm.py        | Custom llm class                                             |
+| src/promp.py      | Langchain-like prompt class                                  |
+| src/runnables.py  | Implementation of LCEL logic in Langchain                    |
+| src/visualizer.py | Handles the video in background                              |
+| src/tools         | Contains all the modules that define the agent capabilities. |
+| app_tools         | Module to interact with the "JARVIS"                         |
+| app_rag           | Module to interact with PDF based LLM app                    |
+
 
 ## Configurations:
 
