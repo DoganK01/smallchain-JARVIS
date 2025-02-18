@@ -30,31 +30,31 @@ Introducing a lightweight library inspired by Langchain, designed to bring the p
 
 ## Configurations:
 
-**Azure Openai** API Key: GPT-4o API Key Deployed on Azure
+• **Azure Openai** API Key: GPT-4o API Key Deployed on Azure
 
-**Azure Openai** API Version: API Version for GPT-4o Deployed on Azure
+• **Azure Openai** API Version: API Version for GPT-4o Deployed on Azure
 
-**Azure Openai** Endpoint: Endpoint for GPT-4o Deployed on Azure
+• **Azure Openai** Endpoint: Endpoint for GPT-4o Deployed on Azure
 
-**Weather API Key**: API Key for OpenWeatherMap. You can get an OpenWeatherMap API Key by signing up on the OpenWeatherMap website, creating an account, navigating to the "API Keys" section, and generating a new key.
+• **Weather API Key**: API Key for OpenWeatherMap. You can get an OpenWeatherMap API Key by signing up on the OpenWeatherMap website, creating an account, navigating to the "API Keys" section, and generating a new key.
 
-**Google Credentials Path**:  JSON file that contains authentication details, such as client ID, client secret, and access tokens, allowing applications to authenticate and interact with Google Cloud services securely.
+• **Google Credentials Path**:  JSON file that contains authentication details, such as client ID, client secret, and access tokens, allowing applications to authenticate and interact with Google Cloud services securely.
 You can get it by creating a service account in the Google Cloud Console, assigning necessary roles, generating a JSON key, and downloading it from the "Keys" section under "Service Accounts."
 
-**Google Maps API Key**: The Google Maps API Key is a unique identifier that authenticates requests to Google Maps services, enabling access to features like geocoding, directions, and places. 
+• **Google Maps API Key**: The Google Maps API Key is a unique identifier that authenticates requests to Google Maps services, enabling access to features like geocoding, directions, and places. 
 You can get a Google Maps API Key by creating a project in the Google Cloud Console, enabling the required Maps APIs, generating an API key under "Credentials," and restricting it for security.
 
-**Azure Openai TTS Endpoint**: Endpoint for TTS-1 Deployed on Azure
+• **Azure Openai TTS Endpoint**: Endpoint for TTS-1 Deployed on Azure
 
-**Azure Openai TTS API Key**: TTS-1 API Key Deployed on Azure
+• **Azure Openai TTS API Key**: TTS-1 API Key Deployed on Azure
 
-**Azure Openai TTS API Version**: API Version for TTS-1 Deployed on Azure
+• **Azure Openai TTS API Version**: API Version for TTS-1 Deployed on Azure
 
-**Azure Openai Whisper Endpoint**: Endpoint for Whisper-1 Deployed on Azure
+• **Azure Openai Whisper Endpoint**: Endpoint for Whisper-1 Deployed on Azure
 
-**Azure Openai Whisper API Key**: Whisper API Key Deployed on Azure
+• **Azure Openai Whisper API Key**: Whisper API Key Deployed on Azure
 
-**Azure Openai Whisper API Version**: API Version for Whisper Deployed on Azure
+• **Azure Openai Whisper API Version**: API Version for Whisper Deployed on Azure
 
 And then create a .env file. You can see an example as ".env.copy" in the repository. Popule the file.
 
